@@ -3,6 +3,7 @@
     <div class="mt-15">
       <h1 >Register</h1>
       <br><br>
+    <v-form>
       <v-text-field label="First Name"></v-text-field>
       <v-text-field label="Last Name"></v-text-field>
       <v-text-field label="Email Address"></v-text-field>
@@ -15,6 +16,8 @@
           <v-btn variant="text" color="primary" size="x-small">I already have an account</v-btn>
         </router-link>
       </div>
+    </v-form>
+
 
     </div>
   </div>

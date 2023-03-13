@@ -8,6 +8,8 @@ import MyAppointments from "@/views/MyAppointments.vue";
 import UserSettings from "@/views/UserSettings.vue";
 import CreateAppointment from "@/views/CreateAppointment.vue";
 import AddPrescriptions from "@/views/AddPrescriptions.vue";
+import adminOptions from "@/views/adminOptions.vue";
+import patientOptions from "@/views/patientOptions.vue";
 
 const routes = [
   { path: '/', component: Home, name: "Home", meta: { layout: 'default'}},
@@ -16,6 +18,8 @@ const routes = [
   { path: '/user_settings', component: UserSettings, name: "Settings", meta: { layout: 'default'}},
   { path: '/create_appointments', component: CreateAppointment, name: "Create Appointments", meta: { layout: 'default'}},
   { path: '/add_prescriptions', component: AddPrescriptions, name: "Add Prescriptions", meta: { layout: 'default'}},
+  { path: '/admin_options', component: adminOptions, name: "Admin Dashboard", meta: { layout: 'default'}},
+  { path: '/patient_options', component: patientOptions, name: "My Dashboard", meta: { layout: 'default'}},
 
 
   { path: '/login', component: Login, name: "Login", meta: { layout: 'guest'}},
