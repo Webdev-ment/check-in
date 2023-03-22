@@ -48,7 +48,8 @@ exports.loginUser =  (req, res, next) =>{
                                     user: {
 
                                         email: user[0].userEmail,
-                                        name: user[0].FirstName + ' ' + user[0].LastName
+                                        name: user[0].FirstName + ' ' + user[0].LastName,
+                                        isAdmin: user[0].isAdmin
                                     }
                                 })
                             }
@@ -68,6 +69,7 @@ exports.loginUser =  (req, res, next) =>{
 };
 
 exports.registerUser = (req, res, next) => {
+    console.log("=======================");
     console.log(req.body);
     User.find({
         email: req.body.userEmail
@@ -84,16 +86,18 @@ exports.registerUser = (req, res, next) => {
                             error: err
                         })
                     }else{
+                        console.log(hash)
 
                         const user = new User({
                             _id: new mongoose.Types.ObjectId(),
-                            firstName: req.body.FirstName,
-                            lastName: req.body.LastName,
+                            FirstName: req.body.FirstName,
+                            LastName: req.body.LastName,
                             userPassword: hash,
                             userEmail: req.body.userEmail
 
                             //projectAssociation: []
                         });
+                        console.log(user)
                         user.save()
                             .then(result => {
                                 res.status(201).json({
@@ -119,3 +123,7 @@ exports.registerUser = (req, res, next) => {
 
 
 };
+
+exports.checkAuth = (request, response, next) => {
+
+}

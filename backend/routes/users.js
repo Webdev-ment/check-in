@@ -4,11 +4,13 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.json({x: "'respond with a resource'"});
 });
 
-router.post('/login', userController.loginUser);
+router.post('/login', userController.loginUser); //http://localhost:4000/users/login
 
 router.post('/register', userController.registerUser);
+
+
 
 module.exports = router;

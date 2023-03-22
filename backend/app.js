@@ -1,5 +1,6 @@
 let express = require('express');
 let path = require('path');
+require('dotenv').config()
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -13,6 +14,7 @@ mongoose.connect('mongodb+srv://checin:Ch3c%21n@node-rest-checin.21vtxg7.mongodb
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let appointmentsRouter = require('./routes/appointments');
 
 let app = express();
 
@@ -24,12 +26,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//The system routes
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-
 //Handling CORS
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -37,6 +33,14 @@ app.use(function(req, res, next) {
     //res.setHeader("Access-Control-Allow-Headers", "Authorization");
     next();
 });
+
+//The system routes
+app.use('/', indexRouter);
+app.use('/users', usersRouter); //http:localhost:4000/users
+app.use('/appointments', appointmentsRouter);
+
+
+
 
 //error handling
 app.use((req, res, next ) => {

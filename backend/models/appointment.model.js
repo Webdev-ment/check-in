@@ -1,20 +1,24 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+
+
+const appointmentSchema = mongoose.Schema({
 
     _id: mongoose.Schema.Types.ObjectId,
 
     FirstName: { type: String, required: true},
     LastName: { type: String,  required: true },
-    userEmail: {
+    patientEmail: {
         type: String,
         required: true,
-        unique: true,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
-    userPassword: { type: String,  required: true },
-    isAdmin: { type: Boolean,  default: false }
+    phoneNumber: { type: String,  required: true },
+    address: { type: String,  default: true },
+    procedure: {type: String, required: true},
+    facility: {type: Boolean, required: true},
+    appDate: {type: Date, required: true}
 
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('appointment', appointmentSchema);
