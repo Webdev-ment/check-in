@@ -10,6 +10,7 @@ import CreateAppointment from "@/views/CreateAppointment.vue";
 import AddPrescriptions from "@/views/AddPrescriptions.vue";
 import adminOptions from "@/views/adminOptions.vue";
 import patientOptions from "@/views/patientOptions.vue";
+import viewPrescriptions from "@/views/viewPrescriptions.vue";
 
 const routes = [
   { path: '/', component: Home, name: "Home", meta: { layout: 'default'}},
@@ -20,6 +21,8 @@ const routes = [
   { path: '/add_prescriptions', component: AddPrescriptions, name: "Add Prescriptions", meta: { layout: 'default'}},
   { path: '/admin_options', component: adminOptions, name: "Admin Dashboard", meta: { layout: 'default'}},
   { path: '/patient_options', component: patientOptions, name: "My Dashboard", meta: { layout: 'default'}},
+  { path: '/view_prescriptions', component: viewPrescriptions, name: "View Prescriptions", meta: { layout: 'default'}},
+
 
 
   { path: '/login', component: Login, name: "Login", meta: { layout: 'guest'}},

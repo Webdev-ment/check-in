@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://checin:Ch3c%21n@node-rest-checin.21vtxg7.mongodb
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let appointmentsRouter = require('./routes/appointments');
+let prescriptionRouter = require('./routes/prescription');
 
 let app = express();
 
@@ -38,6 +39,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter); //http:localhost:4000/users
 app.use('/appointments', appointmentsRouter);
+app.use('/prescription', prescriptionRouter);
 
 
 
