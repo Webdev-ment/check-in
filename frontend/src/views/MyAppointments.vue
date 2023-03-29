@@ -25,8 +25,9 @@
               <v-btn
                 variant="flat"
                 color="primary"
+                href="/create_appointments"
               >
-                <router-link to="/create_appointments">Create Appointment</router-link>
+               Create Appointment
               </v-btn>
             </v-sheet>
           </v-col>

@@ -8,9 +8,9 @@
       <th class="text-left">
         Dosage
       </th>
-      <th class="text-left">
-        Status
-      </th>
+<!--      <th class="text-left">-->
+<!--        Status-->
+<!--      </th>-->
     </tr>
     </thead>
     <tbody>
@@ -19,8 +19,8 @@
       :key="prescription._id"
     >
       <!--          <td>{{ prescription.FirstName + " " + appointment.LastName}}</td>-->
-      <td>{{ prescription.medName }}</td>
-      <td>{{ prescription.dose }}</td>
+      <td>{{ prescription.Medicine }}</td>
+      <td>{{ prescription.Dosage }}</td>
     </tr>
     </tbody>
   </v-table>

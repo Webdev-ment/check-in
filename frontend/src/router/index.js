@@ -11,6 +11,7 @@ import AddPrescriptions from "@/views/AddPrescriptions.vue";
 import adminOptions from "@/views/adminOptions.vue";
 import patientOptions from "@/views/patientOptions.vue";
 import viewPrescriptions from "@/views/viewPrescriptions.vue";
+import patientRecord from "@/views/patientRecord.vue";
 
 const routes = [
   { path: '/', component: Home, name: "Home", meta: { layout: 'default'}},
@@ -22,6 +23,7 @@ const routes = [
   { path: '/admin_options', component: adminOptions, name: "Admin Dashboard", meta: { layout: 'default'}},
   { path: '/patient_options', component: patientOptions, name: "My Dashboard", meta: { layout: 'default'}},
   { path: '/view_prescriptions', component: viewPrescriptions, name: "View Prescriptions", meta: { layout: 'default'}},
+  { path: '/patient_record', component: patientRecord, name: "Patient Record", meta: { layout: 'default'}},
 
 
 

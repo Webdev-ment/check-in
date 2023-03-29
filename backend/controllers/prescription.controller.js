@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Prescription = require("../models/prescription.model");
 
 
+
 exports.addPrescription = (req, res, next) => {
     const prescription = new Prescription({
         _id: new mongoose.Types.ObjectId(),
@@ -24,4 +25,12 @@ exports.addPrescription = (req, res, next) => {
             });
         });
     //return res.json({answer: "Appointment created!"})
+}
+
+
+exports.getPrescriptions = async (req, res, next) => {
+    const filter = {};
+    const all = await Prescription.find(filter);
+
+    return res.status(200).json(all)
 }

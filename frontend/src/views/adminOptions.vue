@@ -8,6 +8,37 @@
 
     <v-container>
       <v-row dense>
+
+        <v-col cols="12">
+          <v-card
+            color="#952175"
+            theme="dark"
+          >
+            <div class="d-flex flex-no-wrap justify-space-between">
+              <div>
+                <v-card-title class="text-h5">
+                  Create Prescriptions
+                </v-card-title>
+
+                <!--                <v-card-subtitle>Shows Patients who visit the facility.</v-card-subtitle>-->
+
+                <v-card-actions>
+                  <v-btn
+                    class="ms-2"
+                    variant="outlined"
+                    size="small"
+                    href="/add_prescriptions"
+                  >
+                 Create Prescriptions
+                  </v-btn>
+                </v-card-actions>
+
+              </div>
+
+            </div>
+          </v-card>
+        </v-col>
+
         <v-col cols="12">
           <v-card
             color="#385F73"
@@ -25,7 +56,8 @@
               <v-btn
                 class="ms-2"
                 variant="outlined"
-                size="small">
+                size="small"
+              href="">
                 View Now
               </v-btn>
             </v-card-actions>
@@ -60,34 +92,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12">
-          <v-card
-            color="#952175"
-            theme="dark"
-          >
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                <v-card-title class="text-h5">
-                  Create Prescriptions
-                </v-card-title>
 
-<!--                <v-card-subtitle>Shows Patients who visit the facility.</v-card-subtitle>-->
-
-                <v-card-actions>
-                  <v-btn
-                    class="ms-2"
-                    variant="outlined"
-                    size="small"
-                  >
-                    View Now
-                  </v-btn>
-                </v-card-actions>
-
-              </div>
-
-            </div>
-          </v-card>
-        </v-col>
       </v-row>
     </v-container>
   </v-card>

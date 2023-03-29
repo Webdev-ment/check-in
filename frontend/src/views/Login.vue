@@ -25,6 +25,7 @@
 import axios from "axios";
 import AdminOptions from "@/views/adminOptions.vue";
 import PatientOptions from "@/views/patientOptions.vue";
+import {el} from "vuetify/locale";
 
 export default {
   name: "Login",
@@ -43,11 +44,21 @@ export default {
         userEmail: this.email,
         userPassword: this.password
       })
-        .then(function (response) {
-          console.log(response);
+        .then(response =>{
+          console.log(response.data);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("adminStatus", response.data.user.isAdmin);
-          self.$router.push("/")
+          console.log(localStorage.getItem("adminStatus"))
+
+          if (response.data.user.isAdmin)
+          {
+            self.$router.push("/admin_options")
+            console.log("/admin_options")
+          } else {
+            self.$router.push("/patient_options")
+            console.log("/patient_options")
+          }
+
         })
         .catch(function (error) {
           console.log(error);

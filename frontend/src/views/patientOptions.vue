@@ -28,7 +28,8 @@
                     <v-btn
                       class="ms-2"
                       variant="outlined"
-                      size="small">
+                      size="small"
+                    href="/create_appointments">
                       Create Now
                     </v-btn>
                   </v-card-actions>
@@ -53,6 +54,7 @@
                           class="ms-2"
                           variant="outlined"
                           size="small"
+                          href=""
                         >
                           Add Now
                         </v-btn>
