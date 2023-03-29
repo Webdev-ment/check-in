@@ -4,39 +4,39 @@
       <v-navigation-drawer v-model="drawer" >
         <!--  -->
         <div class="d-flex justify-center mt-5">
-          <h4 >Chec-In</h4>
+          <h4 >Chec-In Admin</h4>
         </div>
         <v-list density="compact">
-          <v-list-item active-color="primary" to="/">
+<!--          <v-list-item active-color="primary" to="/">
             <template v-slot:prepend>
               <v-icon icon="mdi-map"></v-icon>
             </template>
             <v-list-item-title >Home</v-list-item-title>
           </v-list-item>
-          <v-list-item active-color="primary" to="/patient_options">
+          <v-list-item active-color="primary" to="/admin_options">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
             </template>
             <v-list-item-title >Dashboard</v-list-item-title>
           </v-list-item>
-          <v-list-item active-color="primary" to="/my_appointments">
+          <v-list-item active-color="primary" to="/view_appointments">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
             </template>
-            <v-list-item-title >Appointments</v-list-item-title>
+            <v-list-item-title >View Appointments</v-list-item-title>
           </v-list-item>
-          <v-list-item active-color="primary" to="/view_prescriptions">
+          <v-list-item active-color="primary" to="/add_prescriptions">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
             </template>
-            <v-list-item-title >My Prescriptions</v-list-item-title>
+            <v-list-item-title >Add Prescriptions</v-list-item-title>
           </v-list-item>
-<!--          <v-list-item active-color="primary" to="/user_settings">-->
-<!--            <template v-slot:prepend>-->
-<!--              <v-icon icon="mdi-clock"></v-icon>-->
-<!--            </template>-->
-<!--            <v-list-item-title >Settings</v-list-item-title>-->
-<!--          </v-list-item>-->
+          &lt;!&ndash;          <v-list-item active-color="primary" to="/user_settings">&ndash;&gt;
+          &lt;!&ndash;            <template v-slot:prepend>&ndash;&gt;
+          &lt;!&ndash;              <v-icon icon="mdi-clock"></v-icon>&ndash;&gt;
+          &lt;!&ndash;            </template>&ndash;&gt;
+          &lt;!&ndash;            <v-list-item-title >Settings</v-list-item-title>&ndash;&gt;
+          &lt;!&ndash;          </v-list-item>&ndash;&gt;-->
           <v-list-item active-color="primary" color="red" href="#" @click="simulateLogout">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
@@ -56,7 +56,7 @@
       <v-main>
         <!--  -->
         <div class="pa-5">
-            <router-view />
+          <router-view />
         </div>
       </v-main>
     </v-app>
@@ -65,15 +65,15 @@
 
 <script>
 export default {
-  name: "auth",
-  data(){
+  name: "adminAuth",
+  data() {
     return {
       drawer: null,
-      userName:""
+      userName: ""
     }
   },
   methods: {
-    simulateLogout(){
+    simulateLogout() {
       localStorage.removeItem("token");
       localStorage.removeItem("fullname");
       localStorage.removeItem("email");
@@ -81,8 +81,8 @@ export default {
       this.$router.push("/login")
     }
   },
-  mounted(){
-    if (localStorage.getItem("token") === null){
+  mounted() {
+    if (localStorage.getItem("token") === null) {
       this.$router.push("/login")
     }
     this.userName = localStorage.getItem("fullname")

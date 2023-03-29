@@ -8,6 +8,7 @@
 import App from './App.vue'
 import authLayout from './layouts/auth.vue'
 import guestLayout from './layouts/guest.vue'
+import adminAuthLayout from './layouts/adminAuth.vue'
 
 
 // Composables
@@ -24,3 +25,4 @@ app.mount('#app')
 
 app.component("guest-layout", guestLayout)
 app.component("default-layout", authLayout)
+app.component("admin-layout", adminAuthLayout)

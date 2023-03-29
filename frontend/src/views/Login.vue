@@ -25,6 +25,7 @@
 import axios from "axios";
 import AdminOptions from "@/views/adminOptions.vue";
 import PatientOptions from "@/views/patientOptions.vue";
+import AdminAuth from "@/layouts/adminAuth.vue";
 import {el} from "vuetify/locale";
 
 export default {
@@ -35,7 +36,7 @@ export default {
       password: ""
     }
   },
-  components: {PatientOptions, AdminOptions},
+  components: {PatientOptions, AdminAuth,},
   methods: {
 
     simulateLogin(){
@@ -45,16 +46,17 @@ export default {
         userPassword: this.password
       })
         .then(response =>{
-          console.log(response.data);
+          console.log(response.data.user.name);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("email", this.email);
+          localStorage.setItem("fullname", response.data.user.name)
           localStorage.setItem("adminStatus", response.data.user.isAdmin);
           console.log(localStorage.getItem("adminStatus"))
 
           if (response.data.user.isAdmin)
           {
-            self.$router.push("/admin_options")
-            console.log("/admin_options")
+            self.$router.push("/admin")
+            console.log("/admin-layout")
           } else {
             self.$router.push("/patient_options")
             console.log("/patient_options")
