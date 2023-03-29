@@ -17,7 +17,8 @@ const appointmentSchema = mongoose.Schema({
     address: { type: String,  default: true },
     procedure: {type: String, required: true},
     facility: {type: Boolean, required: true},
-    appDate: {type: Date, required: true}
+    appDate: {type: Date, required: true},
+    appTime: {type: String, required: true}
 
 });
 

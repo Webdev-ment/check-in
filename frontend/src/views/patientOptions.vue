@@ -126,7 +126,8 @@
                     <v-btn
                       class="ms-2"
                       variant="outlined"
-                      size="small">
+                      size="small"
+                    href="my_appointments">
                       View Now
                     </v-btn>
                   </v-card-actions>

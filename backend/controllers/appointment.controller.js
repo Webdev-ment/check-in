@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Appointment = require("../models/appointment.model");
+const Prescription = require("../models/prescription.model");
 
 
 
@@ -14,6 +15,7 @@ exports.createAppointment = (req, res, next) => {
         procedure: req.body.procedure,
         facility: req.body.facility,
         appDate: req.body.appDate,
+        appTime: req.body.appTime,
 
         //projectAssociation: []
     });
@@ -34,7 +36,7 @@ exports.createAppointment = (req, res, next) => {
 }
 
 exports.getAppointments = async (req, res, next) => {
-    const filter = {};
+    const filter = {"patientEmail": req.query.email};
     const all = await Appointment.find(filter);
 
     return res.status(200).json(all)

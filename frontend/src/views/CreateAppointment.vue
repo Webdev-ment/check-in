@@ -81,7 +81,7 @@
 
           <v-col
             cols="12"
-            md="6"
+            md="4"
           >
               <v-radio-group v-model="facility">
                 <template v-slot:label>
@@ -101,16 +101,16 @@
           </v-col>
           <v-col
             cols="12"
-            md="6"
+            md="4"
           >
             <v-text-field label="Appointment Date" variant="solo" type="date" v-model="date"></v-text-field>
           </v-col>
 
           <v-col
             cols="12"
-            md="6"
+            md="4"
           >
-
+            <v-text-field label="Appointment Time" variant="solo" type="string" v-model="appTime"></v-text-field>
           </v-col>
 
         </v-row>
@@ -143,7 +143,8 @@ export default {
       address: "",
       procedure: "",
       facility: "",
-      date: ""
+      date: "",
+      appTime: ""
     }
   },
   methods: {
@@ -158,7 +159,8 @@ export default {
         address: this.address,
         procedure: this.procedure,
         facility: this.facility === "Yes",
-        appDate: this.date
+        appDate: this.date,
+        appTime: this.appTime
       })
         .then(function (response) {
           console.log(response);

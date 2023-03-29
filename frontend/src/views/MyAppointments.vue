@@ -38,14 +38,17 @@
         >
           <thead>
           <tr>
-            <th class="text-left">
-              Patient Name
-            </th>
+<!--            <th class="text-left">-->
+<!--              Patient Name-->
+<!--            </th>-->
             <th class="text-left">
               Procedures
             </th>
             <th class="text-left">
               Appointment Date
+            </th>
+            <th class="text-left">
+               Time of Appointment
             </th>
           </tr>
           </thead>
@@ -54,9 +57,10 @@
             v-for="appointment in appointments"
             :key="appointment._id"
           >
-            <td>{{ appointment.FirstName + " " + appointment.LastName}}</td>
+<!--            <td>{{ appointment.FirstName + " " + appointment.LastName}}</td>-->
             <td>{{ appointment.procedure }}</td>
             <td>{{ appointment.appDate }}</td>
+            <td>{{ appointment.appTime }}</td>
           </tr>
           </tbody>
         </v-table>
@@ -83,8 +87,8 @@ export default {
     }
   },
   mounted() {
-
-    axios.get('http://localhost:4000/appointments/get', {
+    const patientEmail = localStorage.getItem("email")
+    axios.get('http://localhost:4000/appointments/get?email=' + patientEmail,  {
 
     })
       .then( async (response) => {
