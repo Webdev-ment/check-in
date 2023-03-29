@@ -54,7 +54,7 @@
                           class="ms-2"
                           variant="outlined"
                           size="small"
-                          href=""
+                          href="/patient_record"
                         >
                           Add Now
                         </v-btn>
@@ -83,6 +83,7 @@
                           class="ms-2"
                           variant="outlined"
                           size="small"
+                          href="/view_prescriptions"
                         >
                           View Now
                         </v-btn>

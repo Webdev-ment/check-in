@@ -21,6 +21,8 @@
       <!--          <td>{{ prescription.FirstName + " " + appointment.LastName}}</td>-->
       <td>{{ prescription.Medicine }}</td>
       <td>{{ prescription.Dosage }}</td>
+<!--      <td>{{ prescription.patientEmail }}</td>-->
+
     </tr>
     </tbody>
   </v-table>
@@ -44,8 +46,8 @@ export default {
     }
   },
   mounted() {
-
-    axios.get('http://localhost:4000/prescription/get', {
+    const patientEmail = localStorage.getItem("email")
+    axios.get('http://localhost:4000/prescription/get?email=' + patientEmail, {
 
     })
       .then( async (response) => {

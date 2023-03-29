@@ -45,6 +45,13 @@
               required
             ></v-text-field>
 
+            <v-text-field
+              v-model="email"
+              label="Email"
+              :rules="doseRules"
+              required
+            ></v-text-field>
+
             <v-btn type="submit" block class="mt-2 " @click="simulateAppointment">Add</v-btn>
           </v-form>
         </v-sheet>
@@ -64,7 +71,8 @@ export default {
   data() {
     return {
       medName: "",
-      dose: ""
+      dose: "",
+      patientEmail: ""
     }
   },
   methods: {
@@ -74,6 +82,7 @@ export default {
       axios.post('http://localhost:4000/prescription/add', {
         Medicine: this.medName,
         Dosage: this.dose,
+        patientEmail: this.patientEmail
       })
         .then(function (response) {
           console.log(response);

@@ -47,6 +47,7 @@ export default {
         .then(response =>{
           console.log(response.data);
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("email", this.email);
           localStorage.setItem("adminStatus", response.data.user.isAdmin);
           console.log(localStorage.getItem("adminStatus"))
 

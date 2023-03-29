@@ -16,6 +16,7 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let appointmentsRouter = require('./routes/appointments');
 let prescriptionRouter = require('./routes/prescription');
+let recordRouter = require('./routes/record');
 
 let app = express();
 
@@ -40,6 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter); //http:localhost:4000/users
 app.use('/appointments', appointmentsRouter);
 app.use('/prescription', prescriptionRouter);
+app.use('/record', recordRouter);
 
 
 
