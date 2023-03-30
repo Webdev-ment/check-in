@@ -36,9 +36,11 @@ exports.createAppointment = (req, res, next) => {
 }
 
 exports.getAppointments = async (req, res, next) => {
-    const filter = {"patientEmail": req.query.email};
+    // const filter = {"patientEmail": req.query.email};
+    const filter = req.query.email !== "" ? {"patientEmail": req.query.email}: {};
+    console.log(filter)
     const all = await Appointment.find(filter);
-
+    console.log(all)
     return res.status(200).json(all)
 
 }

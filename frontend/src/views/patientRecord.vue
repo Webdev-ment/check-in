@@ -43,12 +43,35 @@
             ></v-text-field>
           </v-col>
 
-
           <v-col
             cols="12"
             md="6"
           >
             <v-text-field label="Birth Date" variant="solo" type="date" v-model="birth"></v-text-field>
+          </v-col>
+
+          <v-col
+            cols="12"
+            md="6"
+          >
+            <v-text-field
+              v-model="patientEmail"
+              :rules="emailRules"
+              label="Patient Email"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col
+            cols="12"
+            md="6"
+          >
+            <v-text-field
+              v-model="patientNumber"
+              :rules="emailRules"
+              label="Telephone"
+              required
+            ></v-text-field>
           </v-col>
 
           <h2>General Medical History</h2>
@@ -128,6 +151,8 @@ export default {
       firstname: "",
       lastname: "",
       address: "",
+      patientEmail: "",
+      patientNumber: "",
       birth: "",
       history: "",
       name: "",
@@ -142,6 +167,8 @@ export default {
         FirstName: this.firstname,
         LastName: this.lastname,
         address: this.address,
+        patientEmail: this.patientEmail,
+        patientNumber: this.patientNumber,
         birthDate: this.birth,
         medhistory: this.history,
         emergName: this.name,

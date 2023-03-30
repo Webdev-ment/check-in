@@ -20,6 +20,7 @@ exports.addPrescription = (req, res, next) => {
             });
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json({
                 error: err,
                 message: 'fail'
@@ -30,8 +31,9 @@ exports.addPrescription = (req, res, next) => {
 
 
 exports.getPrescriptions = async (req, res, next) => {
-    const filter = {"patientEmail": req.query.email};
+    const filter = req.query.email !== "" ? {"patientEmail": req.query.email}: {};
+    console.log(filter)
     const all = await Prescription.find(filter);
-
+    console.log(all)
     return res.status(200).json(all)
 }

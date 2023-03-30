@@ -46,7 +46,7 @@
             ></v-text-field>
 
             <v-text-field
-              v-model="email"
+              v-model="patientEmail"
               label="Email"
               :rules="doseRules"
               required

@@ -11,6 +11,8 @@ exports.addRecord = (req, res, next) => {
         FirstName: req.body.FirstName,
         LastName: req.body.LastName,
         address: req.body.address,
+        patientEmail: req.body.patientEmail,
+        patientNumber: req.body.patientNumber,
         birthDate: req.body.birthDate,
         medhistory: req.body.medhistory,
         emergName: req.body.emergName,
@@ -37,6 +39,15 @@ exports.addRecord = (req, res, next) => {
 
 exports.getRecords = async (req, res, next) => {
     const filter = {};
+    const all = await Record.find(filter);
+
+    return res.status(200).json(all)
+
+}
+
+exports.getRecordByEmail = async (req, res, next) => {
+    const filter = req.query;
+    console.log(req.query)
     const all = await Record.find(filter);
 
     return res.status(200).json(all)

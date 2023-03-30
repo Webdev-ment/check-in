@@ -12,8 +12,8 @@
               <v-icon icon="mdi-map"></v-icon>
             </template>
             <v-list-item-title >Home</v-list-item-title>
-          </v-list-item>
-          <v-list-item active-color="primary" to="/admin_options">
+          </v-list-item>-->
+          <v-list-item active-color="primary" to="/admin">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
             </template>
@@ -25,18 +25,18 @@
             </template>
             <v-list-item-title >View Appointments</v-list-item-title>
           </v-list-item>
-          <v-list-item active-color="primary" to="/add_prescriptions">
+          <v-list-item active-color="primary" to="/patient_prescriptions">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
             </template>
-            <v-list-item-title >Add Prescriptions</v-list-item-title>
+            <v-list-item-title >View Prescriptions</v-list-item-title>
           </v-list-item>
-          &lt;!&ndash;          <v-list-item active-color="primary" to="/user_settings">&ndash;&gt;
-          &lt;!&ndash;            <template v-slot:prepend>&ndash;&gt;
-          &lt;!&ndash;              <v-icon icon="mdi-clock"></v-icon>&ndash;&gt;
-          &lt;!&ndash;            </template>&ndash;&gt;
-          &lt;!&ndash;            <v-list-item-title >Settings</v-list-item-title>&ndash;&gt;
-          &lt;!&ndash;          </v-list-item>&ndash;&gt;-->
+          <!--          <v-list-item active-color="primary" to="/user_settings">-->
+          <!--            <template v-slot:prepend>-->
+          <!--              <v-icon icon="mdi-clock"></v-icon>-->
+          <!--            </template>-->
+          <!--            <v-list-item-title >Settings</v-list-item-title>-->
+          <!--          </v-list-item>-->
           <v-list-item active-color="primary" color="red" href="#" @click="simulateLogout">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>

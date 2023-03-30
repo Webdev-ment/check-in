@@ -9,6 +9,8 @@ const recordSchema = mongoose.Schema({
     FirstName: { type: String, required: true},
     LastName: { type: String,  required: true },
     address: { type: String,  default: true },
+    patientEmail: { type: String,  default: true },
+    patientNumber: { type: String,  default: true },
     birthDate: {type: Date, required: true},
     medhistory: { type: String,  required: true },
     emergName: {type: String, required: true},

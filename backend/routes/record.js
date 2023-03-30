@@ -12,5 +12,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/create', recordController.addRecord);
 router.get('/get', recordController.getRecords);
+router.get('/getRecordByEmail', recordController.getRecordByEmail);
 
 module.exports = router;

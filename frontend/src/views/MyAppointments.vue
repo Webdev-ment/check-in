@@ -59,7 +59,7 @@
           >
 <!--            <td>{{ appointment.FirstName + " " + appointment.LastName}}</td>-->
             <td>{{ appointment.procedure }}</td>
-            <td>{{ appointment.appDate }}</td>
+            <td>{{ new Date(appointment.appDate).toDateString() }}</td>
             <td>{{ appointment.appTime }}</td>
           </tr>
           </tbody>

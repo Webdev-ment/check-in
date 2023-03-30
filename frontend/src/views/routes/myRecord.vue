@@ -29,6 +29,23 @@
 
             <v-list-item
             >
+              My Email:
+              {{ record.patientEmail}}
+            </v-list-item>
+
+            <v-divider inset></v-divider>
+
+            <v-list-item
+            >
+              Telephone:
+              {{ record.patientNumber}}
+            </v-list-item>
+
+            <v-divider inset></v-divider>
+
+            <v-list-item
+            >
+              Address:
               {{ record.address}}
             </v-list-item>
 
@@ -74,8 +91,8 @@ export default {
     }
   },
   mounted() {
-
-    axios.get('http://localhost:4000/record/get', {
+    const patientEmail = localStorage.getItem("email")
+    axios.get('http://localhost:4000/record/getRecordByEmail?patientEmail=' + patientEmail, {
 
     })
       .then( async (response) => {

@@ -31,12 +31,12 @@
             </template>
             <v-list-item-title >My Prescriptions</v-list-item-title>
           </v-list-item>
-<!--          <v-list-item active-color="primary" to="/user_settings">-->
-<!--            <template v-slot:prepend>-->
-<!--              <v-icon icon="mdi-clock"></v-icon>-->
-<!--            </template>-->
-<!--            <v-list-item-title >Settings</v-list-item-title>-->
-<!--          </v-list-item>-->
+          <v-list-item active-color="primary" to="/my_record">
+            <template v-slot:prepend>
+              <v-icon icon="mdi-clock"></v-icon>
+            </template>
+            <v-list-item-title >My Profile</v-list-item-title>
+          </v-list-item>
           <v-list-item active-color="primary" color="red" href="#" @click="simulateLogout">
             <template v-slot:prepend>
               <v-icon icon="mdi-clock"></v-icon>
